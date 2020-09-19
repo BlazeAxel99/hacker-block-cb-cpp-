@@ -28,7 +28,7 @@ strcpy(largest,a);
 
 }
 
-cout<<largest;
+cout<<largest<<" "<<largest_len<<endl;
 
 
 
