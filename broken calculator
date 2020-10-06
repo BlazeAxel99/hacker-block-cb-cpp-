@@ -1,0 +1,67 @@
+/*
+
+
+Andrew was attempting a mathematics test where he needed to solve problems with factorials. One such problem had an answer which equaled 100! ,He wondered what would this number look like. He tried to calculate 100! On his scientific calculator but failed to get a correct answer. Can you write a code to help Andrew calculate factorials of such large numbers?
+Input Format
+
+a single lined integer N
+Constraints
+
+1 < = N < = 500
+Output Format
+
+Print the factorial of N
+Sample Input
+
+5
+
+Sample Output
+
+120
+
+Explanation
+
+for factorial of 5 we have 5 x 4 x 3 x 2 x 1 = 120
+*/
+#include<iostream>
+using namespace std;
+
+
+int main()
+{
+     int n;
+     cin>>n;
+  
+
+       int i,j,k;
+        int a[5000];
+       int temp=0;    
+       a[0]=1;
+        int m=1;
+         int x;
+     for(i=1;i<=n;i++)
+       {
+           for(j=0;j<m;j++)
+            {
+                x=a[j]*i+temp;
+                a[j]=x%10;
+                temp=x/10;
+             }
+              
+             while(temp>0)
+             {
+               a[m]=temp%10;
+               temp=temp/10;
+                m++;
+             }
+      }
+        
+        for(i=m-1;i>=0;i--)
+          {
+              cout<<a[i];
+           }
+   return 0;
+
+               
+                
+    }
